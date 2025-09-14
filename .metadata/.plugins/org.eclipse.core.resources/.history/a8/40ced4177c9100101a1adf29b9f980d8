@@ -1,0 +1,10 @@
+package com.litcode.practice;
+
+public class AdjacentPalidromeCheck {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

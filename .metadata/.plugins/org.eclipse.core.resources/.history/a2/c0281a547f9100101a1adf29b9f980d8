@@ -1,0 +1,66 @@
+package com.litcode.practice;
+
+import java.util.Scanner;
+
+public class AdjacentPalidromeCheck {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Enter your sctring: ");
+		Scanner sc = new Scanner(System.in);
+		String varOcg = sc.next();
+		System.out.println(makePalindrome(varOcg));
+		if
+
+	}
+
+//	to check the string is palindrome or not using pointer
+	/*
+	 * public static boolean checkPalindrome(String string) { int left = 0, right =
+	 * string.length() - 1;
+	 * 
+	 * while (left < right) { if (string.charAt(left) != string.charAt(right)) {
+	 * return false; } left++; right--; } return true; }
+	 */
+	
+//	step 1: To check if a string is a palindrome using reverse() and equals()
+	public static boolean checkPalindrome(String string) {
+		return string.equals(new StringBuilder(string).reverse().toString());
+	}
+
+	// Step 2: main function to test adjacent swaps
+	public static String makePalindrome(String inputedStr) {
+		// Quick check if already palindrome
+		if (checkPalindrome(inputedStr)) {
+			return inputedStr;
+		}
+
+		char[] chars = inputedStr.toCharArray();
+
+		// Step 3: Try swapping each adjacent pair
+		for (int i = 0; i < chars.length - 1; i++) {
+			// Swap adjacent
+			swap(chars, i, i + 1);
+
+			String newString = new String(chars);
+
+			if (checkPalindrome(newString)) {
+				// exit immediately if palindrome found
+				return newString;
+			}
+
+			// Swap back to original before moving to next iteration
+			swap(chars, i, i + 1);
+		}
+
+		return "Your inputted "; // No palindrome possible
+	}
+
+//	swap the character and return it.
+	private static void swap(char[] arr, int i, int j) {
+		char temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+
+}

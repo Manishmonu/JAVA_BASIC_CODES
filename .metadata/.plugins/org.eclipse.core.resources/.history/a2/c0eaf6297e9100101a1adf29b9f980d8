@@ -1,0 +1,47 @@
+package com.litcode.practice;
+
+import java.util.Scanner;
+
+public class AdjacentPalidromeCheck {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Enter your sctring: ");
+		Scanner sc = new Scanner(System.in);
+		String varOcg = sc.next();
+//		System.out.println(varOcg);
+		if (checkPalindrome(varOcg)) {
+			System.out.println("Your string is palindrome string");
+		} else {
+			System.out.println("swapping");
+//			swapping();
+		}
+
+	}
+
+//	to check the string is palindrome or not 
+//	public static boolean checkPalindrome(String string) {
+//		int left = 0, right = string.length() - 1;
+//
+//		while (left < right) {
+//			if (string.charAt(left) != string.charAt(right)) {
+//				return false;
+//			}
+//			left++;
+//			right--;
+//		}
+//		return true;
+//	}
+//	To check if a string is a palindrome using reverse() and equals()
+	public static boolean checkPalindrome(String string) {
+	    return string.equals(new StringBuilder(string).reverse().toString());
+	}
+	
+//	Utility swap function
+    private static void swap(char[] arr, int i, int j) {
+        char temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+}
