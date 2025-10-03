@@ -10,13 +10,10 @@ public class VowelCheckConsecutive {
 		String st = sc.nextLine();
 		String st1 = st.toUpperCase()+" ";
 		int p = st1.length()-1;
-//		System.out.println(p);
 		int i, ck = 0;
 		for (i = 0; i < p; i++) {
 			char c = st1.charAt(i);
 			char ch = ' ';
-//			System.out.println("Checking the index..." + i);
-//			System.out.println("Checking the aside index..." + (i + 1));
 			
 			ch = st1.charAt(i + 1);
 			if ((c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U')
