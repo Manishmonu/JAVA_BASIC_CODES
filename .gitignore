@@ -1,0 +1,15 @@
+# Eclipse IDE files
+.metadata/
+.classpath
+.project
+.settings/
+
+# Build directories
+bin/
+target/
+out/
+
+# OS junk files
+*.log
+*.tmp
+*.swp
